@@ -1,0 +1,29 @@
+{
+    "author": "zsytssk@gmail.com",
+    "contributors": [],
+    "license": "MIT",
+    "name": "node_script",
+    "version": "1.0.0",
+    "private": true,
+    "description": "",
+    "main": "index.js",
+    "directories": {
+        "doc": "doc"
+    },
+    "scripts": {
+        "start": "ts-node --files src/main.ts",
+        "build": "tsc",
+        "webpack-dev": "webpack --mode development",
+        "webpack-dev-server": "webpack-dev-server --mode development",
+        "webpack-prod": "webpack --mode production"
+    },
+    "devDependencies": {
+        "@types/node": "^10.12.15",
+        "ts-node": "^7.0.1",
+        "tslint": "^5.10.0",
+        "typescript": "^3.0.1",
+        "webpack": "^4.26.1",
+        "webpack-cli": "^3.0.2",
+        "webpack-dev-server": "^3.1.4"
+    }
+}
