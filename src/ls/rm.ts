@@ -1,4 +1,4 @@
-import { exists, lstat, readdir, rmdir, unlink } from './asyncUtil';
+import { exists, lstat, readdir, rmdir, unlink, sleep } from './asyncUtil';
 
 export async function rm(path) {
     if (!(await exists(path))) {

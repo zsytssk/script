@@ -20,6 +20,7 @@ export async function cpDir(
         return num;
     }
     const files = await readdir(src_folder);
+
     for (const file_name of files) {
         const abs_src_path = path.resolve(src_folder, file_name);
         const abs_dist_path = path.resolve(dist_folder, file_name);
@@ -31,11 +32,10 @@ export async function cpDir(
             add_num = 1;
             await cpFile(abs_src_path, abs_dist_path);
             if (progress_fun) {
-                progress_fun(add_num);
+                await progress_fun(add_num);
             }
         }
         num += add_num;
     }
-
     return num;
 }

@@ -23,12 +23,17 @@ export async function cpFile(src_path, dist_path) {
         const readStream = fs.createReadStream(src_path);
         const writeStream = fs.createWriteStream(dist_path);
 
-        readStream.pipe(writeStream);
-        readStream.on('error', err => {
-            reject(err);
+        readStream.on('data', data => {
+            writeStream.write(data);
         });
-        readStream.on('end', () => {
-            writeStream.close();
+        readStream.on('error', err => {
+            throw err;
+        });
+        readStream.on('end', done => {
+            writeStream.end();
+            if (done) {
+                done();
+            }
             resolve();
         });
     });

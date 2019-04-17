@@ -10,6 +10,16 @@ export function readdir(dir): Promise<string[]> {
         });
     });
 }
+export async function readFile(file_path: string): Promise<string> {
+    return new Promise((resolve, reject) => {
+        fs.readFile(file_path, 'utf8', (err, file_str) => {
+            if (err) {
+                return reject(err);
+            }
+            resolve(file_str);
+        });
+    });
+}
 
 export function exists(path) {
     return new Promise((resolve, reject) => {
@@ -35,7 +45,7 @@ export function rmdir(path) {
             if (err) {
                 return reject(err);
             }
-            resolve(err);
+            resolve();
         });
     });
 }
@@ -45,7 +55,7 @@ export function unlink(path) {
             if (err) {
                 return reject(err);
             }
-            resolve(err);
+            resolve();
         });
     });
 }
@@ -59,5 +69,12 @@ export function mkdir(path) {
                 resolve();
             }
         });
+    });
+}
+export function sleep(time: number) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve();
+        }, time);
     });
 }

@@ -10,9 +10,9 @@ export async function cp(src_path: string, dist_path: string, progress_fun?) {
     }
     const stat = await lstat(src_path);
     if (stat.isFile()) {
-        return await cpFile(src_path, dist_path);
+        await cpFile(src_path, dist_path);
     } else if (stat.isDirectory()) {
-        return await cpDir(src_path, dist_path, progress_fun);
+        await cpDir(src_path, dist_path, progress_fun);
     }
 }
 
@@ -30,6 +30,6 @@ export async function mv(src_path: string, dist_path: string) {
     } else if (stat.isDirectory()) {
         file_num = await cpDir(src_path, dist_path);
     }
-    await rm(src_path);
+    rm(src_path);
     return file_num;
 }
