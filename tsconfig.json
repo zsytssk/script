@@ -4,7 +4,7 @@
         "experimentalDecorators": true,
         "module": "commonjs",
         "moduleResolution": "node",
-        "rootDir": "./src",
+        "rootDir": ".",
         "outDir": "./libs",
         "skipDefaultLibCheck": true,
         "skipLibCheck": true,
@@ -12,5 +12,5 @@
         "target": "esnext",
         "watch": true
     },
-    "include": ["src"]
+    "include": ["src", "test"]
 }
