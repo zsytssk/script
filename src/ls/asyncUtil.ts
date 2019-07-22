@@ -29,7 +29,7 @@ export function exists(path: string) {
         });
     });
 }
-export function lstat(path: string): Promise<fs.Stats> {
+export function lstatFile(path: string): Promise<fs.Stats> {
     return new Promise((resolve, reject) => {
         fs.lstat(path, (err, data) => {
             if (err) {

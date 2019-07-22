@@ -1,5 +1,5 @@
 import * as path from 'path';
-import { lstat } from './asyncUtil';
+import { lstatFile } from './asyncUtil';
 
 const split_sign = '\\';
 export function normalize(file_path: string) {
@@ -7,10 +7,7 @@ export function normalize(file_path: string) {
     return file_path.replace(/\\$/, '');
 }
 
-export function calcClosestDepth(
-    path_str: string,
-    parent_path: string,
-): number {
+export function calcClosestDepth(path_str: string, parent_path: string): number {
     path_str = normalize(path_str);
     const parent = normalize(parent_path);
 
@@ -31,7 +28,7 @@ type FileInfo = {
     parent: string;
 };
 export async function getFileInfo(file_path: string): Promise<FileInfo> {
-    const ls_info = await lstat(file_path);
+    const ls_info = await lstatFile(file_path);
     let type: FileInfo['type'];
     let ext: string;
     let name: string;
