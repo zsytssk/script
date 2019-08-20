@@ -50,14 +50,21 @@ export function rmdir(path: string) {
         });
     });
 }
-export function unlink(path: string) {
+export function unlink(file_path: string) {
     return new Promise((resolve, reject) => {
-        fs.unlink(path, err => {
-            if (err) {
-                return reject(err);
-            }
+        // fs.unlink(file_path, err => {
+        //     if (err) {
+        //         reject(err);
+        //     } else {
+        //         resolve();
+        //     }
+        // });
+        try {
+            fs.unlinkSync(file_path);
             resolve();
-        });
+        } catch (err) {
+            reject(err);
+        }
     });
 }
 

@@ -1,7 +1,11 @@
 import * as child_process from 'child_process';
 const { exec } = child_process;
 
-function excuse(command, opts) {
+type Opts = {
+    path?: string;
+    output?: boolean;
+};
+export function excuse(command: string, opts: Opts) {
     const { path, output } = opts;
     const config: any = { maxBuffer: 1024 * 1024 * 100, encoding: 'utf-8' };
     if (path) {
@@ -29,13 +33,13 @@ function excuse(command, opts) {
             if (code === 0) {
                 resolve(std_out);
             } else {
-                resolve(std_err);
+                reject(std_err);
             }
         });
     });
 }
 
-export async function execArr(cmds, opts) {
+export async function execArr(cmds: Array<string>, opts: Opts) {
     if (!Array.isArray(cmds)) {
         return await excuse(cmds, opts);
     }
