@@ -1,9 +1,21 @@
-export function replaceReg(str: string, reg: RegExp, rep_str: string) {
+export type ReplaceFun = (match: RegExpExecArray) => string;
+
+export function replaceReg(
+    str: string,
+    reg: RegExp,
+    replace_str: string | ReplaceFun,
+) {
     const matches = findMatches(str, reg);
     let result_data = str;
     for (let len = matches.length, i = len - 1; i >= 0; i--) {
         const match = matches[i];
-        const rep_str_r = getReplaceStr(rep_str, match);
+
+        let rep_str_r;
+        if (typeof replace_str === 'string') {
+            rep_str_r = getReplaceStr(replace_str, match);
+        } else {
+            rep_str_r = replace_str(match);
+        }
 
         let result_arr;
         if (i === len - 1) {

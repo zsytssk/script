@@ -31,9 +31,9 @@ export function excuse(command: string, opts: Opts) {
 
         run_process.on('exit', code => {
             if (code === 0) {
-                resolve(std_out);
+                resolve(std_out.trim());
             } else {
-                reject(std_err);
+                reject(std_err.trim());
             }
         });
     });
