@@ -1,9 +1,5 @@
-/** 监听数据结构 */
-export type SubscribeObj = {
-    [key: string]: Func<void>;
-};
 /** 每一个event的数据 */
-export type EventData = Array<{
+export type EventData = Set<{
     caller: any;
     callback: Func<any>;
     once?: boolean;
@@ -16,10 +12,6 @@ export type EventData = Array<{
 export default class Observer {
     protected events: Map<string, EventData> = new Map();
 
-    constructor() {
-        // todo
-    }
-
     /**
      * 注册监听
      * @param event
@@ -27,24 +19,14 @@ export default class Observer {
      * @param caller
      */
     public on(
-        event: string | SubscribeObj,
-        callback?: Func<any>,
+        event: string,
+        callback: Func<any>,
         caller?: any,
         once?: boolean,
     ) {
-        if (typeof event === 'object') {
-            caller = callback;
-            for (const event_key in event) {
-                if (!event.hasOwnProperty(event_key)) {
-                    continue;
-                }
-                this.on(event_key, event[event_key], caller);
-            }
-            return;
-        }
-        let events = [];
+        let events: EventData = new Set();
         if (this.events.has(event)) {
-            events = this.events.get(event);
+            events = this.events.get(event) as EventData;
         } else {
             this.events.set(event, events);
         }
@@ -58,7 +40,7 @@ export default class Observer {
             this.off(event, callback, caller);
         };
 
-        events.push({ caller, callback, once, off });
+        events.add({ caller, callback, once, off });
     }
     public getBind(event: string) {
         return this.events.get(event);
@@ -70,57 +52,23 @@ export default class Observer {
      * @param callback
      * @param caller
      */
-    public off(
-        event: string | SubscribeObj,
-        callback?: Func<any>,
-        caller?: any,
-    ) {
-        if (typeof event === 'object') {
-            caller = callback;
-            for (const event_key in event) {
-                if (!event.hasOwnProperty(event_key)) {
-                    continue;
-                }
-                this.on(event_key, event[event_key], caller);
-            }
-            return;
-        }
-
+    public off(event: string, callback?: Func<any>, caller?: any) {
         if (!this.events.has(event)) {
             return;
         }
-        if (callback || caller) {
-            const events = this.events.get(event);
-            if (callback && caller) {
-                for (let len = events.length, i = len - 1; i >= 0; i--) {
-                    if (
-                        events[i].callback === callback &&
-                        events[i].caller === caller
-                    ) {
-                        events.splice(i, 1);
-                        break;
-                    }
-                }
-            } else {
-                // 尽量不要这么传参，效率低下
-                for (let len = events.length, i = len - 1; i >= 0; i--) {
-                    if (
-                        events[i].callback === callback ||
-                        events[i].caller === caller
-                    ) {
-                        events.splice(i, 1);
-                    }
-                }
+        const events = this.events.get(event) as EventData;
+        for (const item of events) {
+            if (item.callback === callback && item.caller === caller) {
+                events.delete(item);
+                break;
             }
-        } else {
-            this.events.delete(event);
         }
     }
     public offAllCaller(caller: any) {
         for (const events_item of this.events.values()) {
-            for (let len = events_item.length, i = len - 1; i >= 0; i--) {
-                if (events_item[i].caller === caller) {
-                    events_item.splice(i, 1);
+            for (const item of events_item) {
+                if (item.caller === caller) {
+                    events_item.delete(item);
                 }
             }
         }
@@ -132,13 +80,13 @@ export default class Observer {
      */
     public emit(event: string, ...params: any[]) {
         if (this.events.has(event)) {
-            const events = this.events.get(event);
-            for (const event_data of events.concat([])) {
+            const events = this.events.get(event) as EventData;
+            for (const event_data of events) {
                 const { callback, once, off } = event_data;
                 if (typeof callback === 'function') {
                     callback.apply(event_data.caller, [...params]);
                 }
-                if (once) {
+                if (once && off) {
                     off();
                 }
             }

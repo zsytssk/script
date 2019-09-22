@@ -1,13 +1,13 @@
 import * as crypto from 'crypto';
 import * as path from 'path';
 import { exists } from '../ls/asyncUtil';
-import { execArr } from '../utils/exec';
+import { excuse } from '../ls/exec';
 import { CONFIG } from './config';
 import { ErrorInfo } from './error';
 
 export async function getLsFilesMap() {
     const { folder } = CONFIG;
-    const data = (await execArr('git ls-tree -r --abbrev head', {
+    const data = (await excuse('git ls-tree -r --abbrev head', {
         path: folder,
     })) as string;
     const list = data.split('\n');
@@ -34,7 +34,7 @@ export async function getLsFilesMap() {
     return result;
 }
 
-export function getFileType(file): FileType {
+export function getFileType(file: string): FileType | undefined {
     const ext = path.extname(file);
     if (ext === '.js') {
         if (/(sail|src)/.test(file)) {
@@ -77,7 +77,9 @@ export async function getAssetsFileInfo(
     return new ErrorInfo(1, file);
 }
 
-export async function analysisAssetsFile(assets_file): Promise<string[]> {
+export async function analysisAssetsFile(
+    assets_file: string,
+): Promise<string[]> {
     const result = [];
     const { frames } = await import(assets_file);
 

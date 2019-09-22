@@ -1,11 +1,10 @@
-import * as fs from 'fs';
 import * as imagemin from 'imagemin';
 import * as imageminMozJpeg from 'imagemin-mozjpeg';
 import * as imageminPngquant from 'imagemin-pngquant';
 import * as path from 'path';
-import { lstat } from './ls/asyncUtil';
-import { walk } from './ls/walk';
-import { write } from './ls/write';
+import { lstatFile } from '../ls/asyncUtil';
+import { walk } from '../ls/walk';
+import { write } from '../ls/write';
 
 (async () => {
     const start = Date.now();
@@ -13,7 +12,7 @@ import { write } from './ls/write';
     const all_num = files.length;
     let num = 0;
     for (const file of files) {
-        const { size } = await lstat(file);
+        const { size } = await lstatFile(file);
         const ext = path.extname(file);
         let data;
         if (ext === '.png') {
@@ -75,10 +74,10 @@ async function getAllFiles() {
     // return [`E:/zsytssk/tools/imageMiniTest/src/task - 副本.png`];
 }
 
-function calcPercent(new_val, ori_val) {
+function calcPercent(new_val: number, ori_val: number) {
     return Math.floor((new_val / ori_val) * 100);
 }
-async function compressPng(file) {
+async function compressPng(file: string) {
     const data = await imagemin([file], undefined, {
         plugins: [
             imageminPngquant({ speed: 1, quality: 70 }),
@@ -87,7 +86,7 @@ async function compressPng(file) {
     });
     return data[0].data;
 }
-async function compressJpg(file) {
+async function compressJpg(file: string) {
     const data = await imagemin([file], undefined, {
         plugins: [imageminMozJpeg()],
     });

@@ -1,5 +1,5 @@
-import { cp } from '../src/compressImg/script/ls/main';
-import { rm } from '../src/compressImg/script/ls/rm';
+import { cp } from '../src/ls/main';
+import { rm } from '../src/ls/rm';
 
 // calcClosestDepth('.vscode/launch.json', '.vscode');
 // calcClosestDepth('.vscode/launch.json', '.vscode');

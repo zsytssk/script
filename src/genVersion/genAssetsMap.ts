@@ -30,7 +30,7 @@ export async function genAssets(
             errors.push(new ErrorInfo(2, raw_file));
             continue;
         }
-        const md5 = shortCommit(genAssetsMd5(files, assets));
+        const md5 = shortCommit(genAssetsMd5(files, assets as string[]));
         for (const file_item of file) {
             result.push({
                 file: shortFile(file_item),
@@ -43,7 +43,7 @@ export async function genAssets(
     return [result, errors];
 }
 
-let temp = [];
+let temp: string[] = [];
 function genAssetsMd5(files: LsFiles, assets: string[]) {
     let str = '';
     for (const file of assets) {
@@ -68,7 +68,7 @@ function hasGeneratedTemp(item: LsFile) {
 }
 function hasGeneratedResult(file: string, result: AssetsInfo[]) {
     let index = -1;
-    index = result.findIndex((item, index) => {
+    index = result.findIndex(item => {
         if (item.file === file) {
             return true;
         }

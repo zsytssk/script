@@ -8,7 +8,7 @@ type PartialAll<T, U> = {
         ? T[p]
         : p extends keyof U
         ? U[p]
-        : never
+        : never;
 };
 type Point = {
     x: number;
@@ -24,3 +24,7 @@ type ClassProp<T, K extends keyof T> = T[K];
 type ClassMethod<T> = { [k in keyof T]: T[k] extends Function ? T[k] : never };
 type ClassMethodName<T> = { [k in keyof T]: T[k] extends Function ? k : never };
 type Ctor<T> = new (...args) => T;
+
+declare module 'imagemin';
+declare module 'imagemin-mozjpeg';
+declare module 'imagemin-pngquant';
