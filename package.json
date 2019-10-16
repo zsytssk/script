@@ -2,26 +2,21 @@
     "author": "zsytssk@gmail.com",
     "contributors": [],
     "license": "MIT",
-    "name": "node_script",
-    "version": "1.0.0",
-    "private": true,
-    "description": "",
+    "name": "zscript",
+    "version": "1.0.2",
+    "description": "zsy node script",
     "main": "index.js",
-    "directories": {
-        "doc": "doc"
-    },
     "scripts": {
         "start": "ts-node --files src/main.ts",
         "test": "ts-node --files test/test.ts",
-        "build": "tsc",
-        "webpack-dev": "webpack --mode development",
-        "webpack-dev-server": "webpack-dev-server --mode development",
-        "webpack-prod": "webpack --mode production"
+        "build": "ts-node --files ./script/build.ts"
     },
     "devDependencies": {
-        "@types/node": "^12.0.2",
+        "@types/node": "^12.7.12",
         "ts-node": "^8.1.0",
-        "tslint": "^5.10.0",
         "typescript": "^3.4.5"
+    },
+    "dependencies": {
+        "dts-gen": "^0.5.8"
     }
 }

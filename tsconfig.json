@@ -1,17 +1,18 @@
 {
     "compilerOptions": {
-        "allowJs": true,
         "experimentalDecorators": true,
         "module": "commonjs",
         "moduleResolution": "node",
-        "rootDir": ".",
+        "rootDir": "./src",
+        "outDir": "./dist",
         "skipDefaultLibCheck": true,
         "skipLibCheck": true,
         "sourceMap": false,
         "target": "esnext",
         "watch": true,
-        "strict": true,
-        "noEmit": true
+        "declaration": true,
+        "emitDeclarationOnly": true,
+        "strict": true
     },
-    "include": ["src", "test"]
+    "include": ["./src", "./script", "./dist"]
 }
