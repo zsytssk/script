@@ -1,5 +1,5 @@
 import * as path from 'path';
-import { cp } from '../src/ls/main';
+import { cp, mv, mvTo } from '../src/ls/main';
 import { excuse } from '../src/ls/exec';
 import { readdir, readFile } from '../src/ls/asyncUtil';
 import { rm } from '../src/ls/rm';
@@ -25,8 +25,9 @@ async function main() {
 }
 
 async function genTypes() {
+    const dist = './dist';
     // await excuse('tsc', { path: path.resolve('../'), output: true });
-    const files = await walk('./dist');
+    const files = await walk(dist);
 
     let ori_con: string = '';
     for (const file of files) {
@@ -34,8 +35,11 @@ async function genTypes() {
             const modules = file.replace('.d.ts', '');
             const ori_con = await readFile(file);
             const clear_con = replaceReg(ori_con, /export declare/g, 'export');
-            const end_con = `declare module "${modules}" {\n ${clear_con} \n}`;
+            const end_con = `<reference path="./type.d.ts" />\n declare module "${modules}" {\n ${clear_con} \n}`;
             await write(path.resolve(file), end_con);
+            const file_name = path.basename(file);
+            console.log(file, file_name);
+            await mvTo(file, dist);
             break;
         }
     }
