@@ -1,0 +1,381 @@
+{
+    "code": 0,
+    "data": {
+        "session": "sess_181111_8bfa17f8f66339c1a52436eef448f3c1",
+        "refresh": "76d0863b5d13a9ed61f7df9149fb93d8",
+        "expiredTime": 604800,
+        "socketSecret": "181111_1576143481_a16cc2ceab3de45972315952a496e971",
+        "openId": "13481",
+        "isNew": true,
+        "userInfo": {
+            "lastLoginTime": "2019-12-12 17:38:01",
+            "createTime": "2019-12-12 17:38:01",
+            "coin": 10000,
+            "diamonds": 10,
+            "dress": "{}",
+            "openId": "13481",
+            "channel": "pc_test",
+            "areaParentId": 1,
+            "areaId": 0,
+            "userType": 0,
+            "avtarUrl": "https://qscdn.gameabc2.com/static/headpic/visitor/94.jpg",
+            "uid": 181111,
+            "nickname": "游客181111"
+        },
+        "profileInfo": {
+            "uid": 181111,
+            "shareAwardCount": 0,
+            "shareAwardTime": 0,
+            "videoAwardCount": 0,
+            "videoAwardTime": 0,
+            "evaluateTime": 0,
+            "evaluateCount": 0,
+            "cgAchieve": 0,
+            "commonGuide": 0,
+            "commonGuideFinish": 0,
+            "homeVideoNum": 0,
+            "lastHomeVideoTime": 0,
+            "lastFreeVipTime": 0,
+            "version": 0
+        },
+        "chargeInfo": {
+            "uid": 181111,
+            "totalCharged": 0,
+            "creditsBalance": 0,
+            "frozenCredits": 0,
+            "accountStatus": 0,
+            "createTime": "2019-12-12 17:38:01"
+        },
+        "switch": {
+            "version": "default",
+            "shareOpen": 1,
+            "friendGameOpen": 1,
+            "versionCheck": 1,
+            "forceUpdate": 1,
+            "newbieQuickStart": 0,
+            "newbieRate": 0,
+            "bannerMoveTime": 1,
+            "systemPaidType": 1,
+            "winDoubleType": 1,
+            "resultBannerSwitch": 0,
+            "resultBannerMoveTime": 1,
+            "resultBtnShowDelay": 0,
+            "resultShareShowDelay": 0,
+            "claimBannerMoveTime": 1,
+            "claimBtnShowDelay": 0,
+            "claimShareShowDelay": 0,
+            "playAwardBannerShowDelay": 0,
+            "playAwardBannerMoveTime": 1,
+            "multiPlayerOpen": 1,
+            "quickStartType": 1,
+            "quickStartTypeList": [11, 11],
+            "evaluateRoundCount": 10,
+            "friendTimeoutSwitch": 1,
+            "verifyNum": 3,
+            "reADSwitch": 1,
+            "homeVideoDailyLimit": 3,
+            "homeVideoSwitch": 0,
+            "playAwardNeedShare": 1,
+            "areaChoosePopup": 0,
+            "buyGoldInGame": 1,
+            "replaySwitch": 1,
+            "playAwardNewSwitch": [0, 0],
+            "homeVideoCoolDownTime": 60,
+            "grandSlamShareSwitch": [1, 0, 10],
+            "gachaTimesType": 1,
+            "newDeskUid": 1,
+            "tingBestTips": 1,
+            "forceGuide": 0,
+            "gameTheme": 10,
+            "vipForcePop": 0,
+            "chatInput": 1,
+            "iosVipShow": 0,
+            "vipGive": 1,
+            "vipgive_activity": 0,
+            "vipactivity_show": 10,
+            "replay_video": 0,
+            "rnum_show": 1,
+            "channelTest": "QD2001:1,QD2002:1,QD2003:1,QD2004:1,QD2005:1,QD2101:5,QD2102:5,QD2103:5,QD2104:5,QD2105:5",
+            "chalTstRange": "QD2001-QD2099:1,QD2201-QD2299:0.05,QD2301-QD2399:11",
+            "score_showtime": "12 ",
+            "ispop": "0",
+            "isShareTips": "1",
+            "shareWaitTime": { "2": 1, "3": 3, "4": 3 },
+            "homeVideoAward": { "10001": 5000 }
+        },
+        "totalRoundCount": 0,
+        "lastGame": 0,
+        "gameServer": "wss://hhgyzjt.gameabc2.com/wss",
+        "relief": {
+            "config": {
+                "threshold": 10,
+                "shareThreshold": 5,
+                "videoThreshold": 5,
+                "rechargeCardNum": 5,
+                "itemList": [
+                    {
+                        "index": 1,
+                        "id": 1,
+                        "type": 1,
+                        "pf": "all",
+                        "awardType": 10001,
+                        "awardNum": 5000
+                    },
+                    {
+                        "index": 2,
+                        "id": 2,
+                        "type": 2,
+                        "pf": "all",
+                        "awardType": 10001,
+                        "awardNum": 8000
+                    },
+                    {
+                        "index": 3,
+                        "id": 3,
+                        "type": 3,
+                        "pf": "android",
+                        "awardType": 10001,
+                        "awardNum": 72000,
+                        "original": 6,
+                        "price": 1,
+                        "dailyLimit": 1,
+                        "slotIndex": 1
+                    },
+                    {
+                        "index": 4,
+                        "id": 4,
+                        "type": 4,
+                        "pf": "all",
+                        "awardType": 10001,
+                        "awardNum": 8000
+                    },
+                    {
+                        "index": 301,
+                        "id": 301,
+                        "type": 3,
+                        "pf": "android",
+                        "awardType": 10001,
+                        "awardNum": 600000,
+                        "original": 60,
+                        "price": 6,
+                        "dailyLimit": 3,
+                        "slotIndex": 2
+                    },
+                    {
+                        "index": 501,
+                        "id": 501,
+                        "type": 3,
+                        "pf": "android",
+                        "awardType": 10001,
+                        "awardNum": 2000000,
+                        "original": 200,
+                        "price": 12,
+                        "dailyLimit": 3,
+                        "slotIndex": 5
+                    },
+                    {
+                        "index": 511,
+                        "id": 511,
+                        "type": 3,
+                        "pf": "android",
+                        "awardType": 10001,
+                        "awardNum": 5000000,
+                        "original": 500,
+                        "price": 25,
+                        "dailyLimit": 3,
+                        "slotIndex": 3
+                    },
+                    {
+                        "index": 521,
+                        "id": 521,
+                        "type": 3,
+                        "pf": "android",
+                        "awardType": 10001,
+                        "awardNum": 30000000,
+                        "original": 3000,
+                        "price": 98,
+                        "dailyLimit": 1,
+                        "slotIndex": 4
+                    }
+                ]
+            },
+            "info": {
+                "uid": 181111,
+                "shareCount": 0,
+                "videoCount": 0,
+                "rechargeCount": 0,
+                "rechargeRecord": 0,
+                "rechargeRecordNew": 0,
+                "balanceAwardCount": 0,
+                "lastBalanceAwardTime": 1576143481,
+                "lastRechargeTime": 1576143481,
+                "version": 0
+            }
+        },
+        "dress_config": [
+            {
+                "id": 1,
+                "type": 1,
+                "icon": "https://qscdn.gameabc2.com/avatarFrame/vip-txk04.png",
+                "consume": 10,
+                "getType": [{ "2": 86400 }]
+            },
+            {
+                "id": 2,
+                "type": 1,
+                "icon": "https://qscdn.gameabc2.com/avatarFrame/vip-txk02.png",
+                "consume": 10,
+                "getType": [{ "2": 43200 }]
+            },
+            {
+                "id": 3,
+                "type": 1,
+                "icon": "https://qscdn.gameabc2.com/avatarFrame/vip-txk01.png",
+                "consume": 10,
+                "getType": [{ "2": 43200 }]
+            },
+            {
+                "id": 4,
+                "type": 1,
+                "icon": "https://qscdn.gameabc2.com/avatarFrame/vip-txk03.png",
+                "consume": 10,
+                "getType": [{ "2": 21600 }]
+            },
+            {
+                "id": 5,
+                "type": 1,
+                "icon": "https://qscdn.gameabc2.com/avatarFrame/vip-txk05.png",
+                "consume": 10,
+                "getType": [{ "2": 21600 }]
+            },
+            {
+                "id": 211,
+                "type": 2,
+                "icon": "emotion_vip_exciting_icon_png",
+                "consume": 10,
+                "getType": [{ "1": 86400 }, { "3": 86400 }]
+            },
+            {
+                "id": 212,
+                "type": 2,
+                "icon": "emotion_vip_hopeless_icon_png",
+                "consume": 10,
+                "getType": [{ "1": 86400 }, { "3": 86400 }]
+            },
+            {
+                "id": 213,
+                "type": 2,
+                "icon": "emotion_vip_annoyed_icon_png",
+                "consume": 10,
+                "getType": [{ "1": 86400 }, { "3": 86400 }]
+            }
+        ],
+        "avoidLoseCharge": [
+            {
+                "id": "1",
+                "productId": 20000,
+                "lowerLimit": 500000,
+                "upperLimit": 800000,
+                "costType": 2,
+                "cost": 3
+            },
+            {
+                "id": "2",
+                "productId": 20001,
+                "lowerLimit": 800000,
+                "upperLimit": 2500000,
+                "costType": 2,
+                "cost": 6
+            },
+            {
+                "id": "3",
+                "productId": 20002,
+                "lowerLimit": 2500000,
+                "upperLimit": 8000000,
+                "costType": 2,
+                "cost": 12
+            },
+            {
+                "id": "4",
+                "productId": 20003,
+                "lowerLimit": 8000000,
+                "upperLimit": 30000000,
+                "costType": 2,
+                "cost": 30
+            },
+            {
+                "id": "5",
+                "productId": 20004,
+                "lowerLimit": 30000000,
+                "upperLimit": 100000000,
+                "costType": 2,
+                "cost": 88
+            }
+        ],
+        "bannerConfig": {
+            "dailyClickLimit": 2,
+            "dailyShowLimit": 20,
+            "dailyPullLimit": 10,
+            "pullAfterShowTimes": 2,
+            "btnShowTime": 1250,
+            "delayTime": [0, 0],
+            "backendTime": 5000,
+            "isFakeEnable": 0,
+            "configFailTime": 3,
+            "pullAfterFail": 1,
+            "unDelayType": "26",
+            "noviceTime": "24",
+            "qLearningConfig": [
+                {
+                    "timePerCell": 200,
+                    "startUid": 0,
+                    "endUid": 65,
+                    "bannerId": "adunit-dc8943d8f33884d0",
+                    "agentModel": 1,
+                    "version": "1.0.0",
+                    "pullTimes": 2
+                }
+            ],
+            "interstitialConfig": {
+                "friendConfig": "0",
+                "goldConfig": "0",
+                "interstitialLoading": 1,
+                "testId": 0
+            }
+        },
+        "hallFuncConfig": [
+            { "id": 101, "meun_level": 1, "position": 1 },
+            { "id": 102, "meun_level": 1, "position": 2 },
+            { "id": 107, "meun_level": 1, "position": 3 },
+            { "id": 103, "meun_level": 1, "position": 4 },
+            { "id": 108, "meun_level": 1, "position": 5 },
+            { "id": 106, "meun_level": 1, "position": 6 },
+            { "id": 105, "meun_level": 1, "position": 7 },
+            { "id": 104, "meun_level": 2, "position": 1 },
+            { "id": 110, "meun_level": 2, "position": 2 }
+        ],
+        "vipInfo": null,
+        "vipShow": true,
+        "vipSource": 0,
+        "sortConfig": [
+            {
+                "hall_position": "11,12,13",
+                "home_position": "12,13,11,17,18",
+                "default_game": 12
+            }
+        ],
+        "iconConfig": [
+            { "type": "left", "sort": "xjhb,mrxg,mrfl,wjdc" },
+            { "type": "right", "sort": "mfjb,djrw,shjl" },
+            { "type": "top", "sort": "rqyj" },
+            { "type": "bottom", "sort": "" }
+        ],
+        "ipstr": true,
+        "rtype": 0,
+        "rval": 0,
+        "rewardid": 0,
+        "reason": 0,
+        "poptutor": 0
+    },
+    "time": 1576143481
+}

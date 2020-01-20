@@ -8,7 +8,7 @@
         "skipDefaultLibCheck": true,
         "skipLibCheck": true,
         "sourceMap": false,
-        "target": "esnext",
+        "target": "es6",
         "watch": true,
         "declaration": true,
         "emitDeclarationOnly": true,

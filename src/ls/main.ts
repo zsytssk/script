@@ -1,5 +1,5 @@
-import { exists, lstatFile } from './asyncUtil';
 import * as path from 'path';
+import { exists, lstatFile } from './asyncUtil';
 import { cpDir } from './cpDir';
 import { cpFile } from './cpFile';
 import { mk } from './mk';
