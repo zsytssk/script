@@ -1,11 +1,189 @@
-{"name":"getSystemInfo","type":"function","params":[{"id":"7380904652148177","name":"object","comment":"","type":"object","props":{"success":{"name":"success","type":"function","params":[{"id":"31251919691155905","name":"res","comment":"","type":"object","props":{"brand":{"name":"brand","comment":"设备品牌","type":"string"},"model":{"name":"model","comment":"设
-备型号","type":"string"},"pixelRatio":{"name":"pixelRatio","comment":"设备像素比","type":"number"},"screenWidth":{"name":"screenWidth","comment":"屏幕宽度，单位px","type":"number"},"screenHeight":{"name":"screenHeight","comment":"屏幕高度，单位px","type":"number"},"windowWidth":{"name":"windowWidth","comment":"可使用窗口宽度，单位px","type":"number"},"windowHeight":{"name":"windowHeight","comment":"可使用窗口高度，单位px","type":"number"},"statusBarHeight":{"name":"statusBarHeight","comment":"状态栏的高度，单位px","type":"number"},"language":{"name":"language","comment":"微信设置的语言","type":"string"},"version":{"name":"version","comment":"微信版本号","type":"string"},"system":{"name":"system","comment":"操作系统及版本","type":"string"},"platform":{"name":"platform","comment":"客户端平台","type":"string"},"fontSizeSetting":{"name":"fontSizeSetting","comment":"用户字体大小（单位px）。以微信客户端「我-设置-通用-字体大小」中的设置为准","type":"number"},"SDKVersion":{"name":"SDKVersion","comment":"客户端基础库版本","type":"string"},"benchmarkLevel":{"name":"benchmarkLevel","comment":"设备性能等级（仅Android小游戏）。取值为：
--2 或 0（该设备无法运行小游戏），-1（性能未知），>=1（设备性能值，该值越高，设备性能越好，目前最高不到50）","type":"number"},"albumAuthorized":{"name":"albumAuthorized","comment":"允许微信使用相册的开关（仅 iOS 有效）","type":"boolean"},"cameraAuthorized":{"name":"cameraAuthorized","comment":"允许微信使用摄像头的开关","type":"boolean"},"locationAuthorized":{"name":"locationAuthorized","comment":"允许微信使用定位的开关","type":"boolean"},"microphoneAuthorized":{"name":"microphoneAuthorized","comment":"允许微信使用麦克风的开关","type":"boolean"},"notificationAuthorized":{"name":"notificationAuthorized","comment":"允许微信通知的开关","type":"boolean"},"notificationAlertAuthorized":{"name":"notificationAlertAuthorized","comment":"允许微信通知带有提醒的开
-关（仅 iOS 有效）","type":"boolean"},"notificationBadgeAuthorized":{"name":"notificationBadgeAuthorized","comment":"允许微信通知带有标记的开关（仅 iOS 有效）","type":"boolean"},"notificationSoundAuthorized":{"name":"notificationSoundAuthorized","comment":"允许微信通知带有声音的开关（仅 iOS 有效）","type":"boolean"},"bluetoothEnabled":{"name":"bluetoothEnabled","comment":"蓝牙的
-系统开关","type":"boolean"},"locationEnabled":{"name":"locationEnabled","comment":"地理位置的系统开关","type":"boolean"},"wifiEnabled":{"name":"wifiEnabled","comment":"Wi-Fi 的系统开关","type":"boolean"},"safeArea":{"id":"5745323897546837","name":"safeArea","comment":"在竖屏正方向下的安全区域","type":"object","props":{"left":{"name":"left","comment":"安全区域左上角横坐标","type":"number"},"right":{"name":"right","comment":"安全区域右下角横坐标","type":"number"},"top":{"name":"top","comment":"安全区域左上角纵坐标","type":"number"},"bottom":{"name":"bottom","comment":"安全区域右下角纵坐标","type":"number"},"width":{"name":"width","comment":"安全区域的宽度，单位逻辑像素","type":"number"},"height":{"name":"height","comment":"安全区域的高度，单位逻辑像素","type":"number"}}}}}],"return":{"id":"435615095077416","comment":"","type":"object","props":{"brand":{"name":"brand","comment":"设备品牌","type":"string"},"model":{"name":"model","comment":"设备型号","type":"string"},"pixelRatio":{"name":"pixelRatio","comment":"设备像素比","type":"number"},"screenWidth":{"name":"screenWidth","comment":"屏幕宽度，单位px","type":"number"},"screenHeight":{"name":"screenHeight","comment":"屏幕高度，单位px","type":"number"},"windowWidth":{"name":"windowWidth","comment":"可使用窗口宽度，单位px","type":"number"},"windowHeight":{"name":"windowHeight","comment":"可使用窗口高度，单位px","type":"number"},"statusBarHeight":{"name":"statusBarHeight","comment":"状态栏的高度，单位px","type":"number"},"language":{"name":"language","comment":"微信设置的语言","type":"string"},"version":{"name":"version","comment":"微信版本号","type":"string"},"system":{"name":"system","comment":"操作系统及版本","type":"string"},"platform":{"name":"platform","comment":"客户端平台","type":"string"},"fontSizeSetting":{"name":"fontSizeSetting","comment":"用户字体大小（单位px）。以微信客户端「我-设置-通用-字体大小」中的设置为准
-","type":"number"},"SDKVersion":{"name":"SDKVersion","comment":"客户端基础库版本","type":"string"},"benchmarkLevel":{"name":"benchmarkLevel","comment":"设备性能等级（仅Android小游戏）。取值
-为：-2 或 0（该设备无法运行小游戏），-1（性能未知），>=1（设备性能值，该值越高，设备性能越好，目前最高不到50）","type":"number"},"albumAuthorized":{"name":"albumAuthorized","comment":"允许微
-信使用相册的开关（仅 iOS 有效）","type":"boolean"},"cameraAuthorized":{"name":"cameraAuthorized","comment":"允许微信使用摄像头的开关","type":"boolean"},"locationAuthorized":{"name":"locationAuthorized","comment":"允许微信使用定位的开关","type":"boolean"},"microphoneAuthorized":{"name":"microphoneAuthorized","comment":"允许微信使用麦克风的开关","type":"boolean"},"notificationAuthorized":{"name":"notificationAuthorized","comment":"允许微信通知的开关","type":"boolean"},"notificationAlertAuthorized":{"name":"notificationAlertAuthorized","comment":"允许微信通知带有提醒
-的开关（仅 iOS 有效）","type":"boolean"},"notificationBadgeAuthorized":{"name":"notificationBadgeAuthorized","comment":"允许微信通知带有标记的开关（仅 iOS 有效）","type":"boolean"},"notificationSoundAuthorized":{"name":"notificationSoundAuthorized","comment":"允许微信通知带有声音的开关（仅 iOS 有效）","type":"boolean"},"bluetoothEnabled":{"name":"bluetoothEnabled","comment":"蓝
-牙的系统开关","type":"boolean"},"locationEnabled":{"name":"locationEnabled","comment":"地理位置的系统开关","type":"boolean"},"wifiEnabled":{"name":"wifiEnabled","comment":"Wi-Fi 的系统开关","type":"boolean"},"safeArea":{"id":"4766388801229835","name":"safeArea","comment":"在竖屏正方向下的安全区域","type":"object","props":{"left":{"name":"left","comment":"安全区域左上角横坐标","type":"number"},"right":{"name":"right","comment":"安全区域右下角横坐标","type":"number"},"top":{"name":"top","comment":"安全区域左上角纵坐标","type":"number"},"bottom":{"name":"bottom","comment":"安全区域右下角纵坐标","type":"number"},"width":{"name":"width","comment":"安全区域的宽度，单位逻辑像素","type":"number"},"height":{"name":"height","comment":"安全区域的高度，单位逻辑
-像素","type":"number"}}}}},"comment":"","id":"2802156592902456"},"fail":{"name":"fail","comment":"","type":"function"},"complete":{"name":"complete","comment":"","type":"function"}}}]}
+[
+    {
+        "type": "function",
+        "level": 1,
+        "item": {
+            "name": "onShow",
+            "type": "function",
+            "comment": "监听小游戏回到前台的事件",
+            "params": [
+                {
+                    "name": "callback",
+                    "type": "function",
+                    "comment": "小游戏回到前台的事件的回调函数",
+                    "params": [
+                        {
+                            "name": "res",
+                            "type": "object",
+                            "props": {
+                                "scene": {
+                                    "name": "scene",
+                                    "comment": "场景值",
+                                    "type": "string"
+                                },
+                                "query": {
+                                    "name": "query",
+                                    "comment": "查询参数",
+                                    "type": "Object"
+                                },
+                                "shareTicket": {
+                                    "name": "shareTicket",
+                                    "comment": "shareTicket",
+                                    "type": "string"
+                                },
+                                "referrerInfo": {
+                                    "name": "referrerInfo",
+                                    "comment": "referrerInfo 的结构",
+                                    "type": "object",
+                                    "props": {
+                                        "appId": {
+                                            "name": "appId",
+                                            "comment": "来源小程序或公众号或App的 appId",
+                                            "type": "string"
+                                        },
+                                        "extraData": {
+                                            "name": "extraData",
+                                            "comment": "来源小程序传过来的数据，scene=1037或1038时支持",
+                                            "type": "object"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "match_sub_arr": [null, null],
+        "match_fun": null
+    },
+    {
+        "type": "function",
+        "level": 3,
+        "item": {
+            "name": "callback",
+            "type": "function",
+            "comment": "小游戏回到前台的事件的回调函数",
+            "params": [
+                {
+                    "name": "res",
+                    "type": "object",
+                    "props": {
+                        "scene": {
+                            "name": "scene",
+                            "comment": "场景值",
+                            "type": "string"
+                        },
+                        "query": {
+                            "name": "query",
+                            "comment": "查询参数",
+                            "type": "Object"
+                        },
+                        "shareTicket": {
+                            "name": "shareTicket",
+                            "comment": "shareTicket",
+                            "type": "string"
+                        },
+                        "referrerInfo": {
+                            "name": "referrerInfo",
+                            "comment": "referrerInfo 的结构",
+                            "type": "object",
+                            "props": {
+                                "appId": {
+                                    "name": "appId",
+                                    "comment": "来源小程序或公众号或App的 appId",
+                                    "type": "string"
+                                },
+                                "extraData": {
+                                    "name": "extraData",
+                                    "comment": "来源小程序传过来的数据，scene=1037或1038时支持",
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "match_sub_arr": [null, null],
+        "match_fun": null
+    },
+    {
+        "type": "object",
+        "level": 5,
+        "item": {
+            "name": "res",
+            "type": "object",
+            "props": {
+                "scene": {
+                    "name": "scene",
+                    "comment": "场景值",
+                    "type": "string"
+                },
+                "query": {
+                    "name": "query",
+                    "comment": "查询参数",
+                    "type": "Object"
+                },
+                "shareTicket": {
+                    "name": "shareTicket",
+                    "comment": "shareTicket",
+                    "type": "string"
+                },
+                "referrerInfo": {
+                    "name": "referrerInfo",
+                    "comment": "referrerInfo 的结构",
+                    "type": "object",
+                    "props": {
+                        "appId": {
+                            "name": "appId",
+                            "comment": "来源小程序或公众号或App的 appId",
+                            "type": "string"
+                        },
+                        "extraData": {
+                            "name": "extraData",
+                            "comment": "来源小程序传过来的数据，scene=1037或1038时支持",
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "match_sub_arr": [null],
+        "match_fun": null
+    },
+    {
+        "type": "object",
+        "level": 6,
+        "item": {
+            "name": "referrerInfo",
+            "comment": "referrerInfo 的结构",
+            "type": "object",
+            "props": {
+                "appId": {
+                    "name": "appId",
+                    "comment": "来源小程序或公众号或App的 appId",
+                    "type": "string"
+                },
+                "extraData": {
+                    "name": "extraData",
+                    "comment": "来源小程序传过来的数据，scene=1037或1038时支持",
+                    "type": "object"
+                }
+            }
+        },
+        "match_sub_arr": [],
+        "match_fun": null
+    },
+    {
+        "type": "object",
+        "level": 7,
+        "item": {
+            "name": "extraData",
+            "comment": "来源小程序传过来的数据，scene=1037或1038时支持",
+            "type": "object"
+        },
+        "match_sub_arr": [null],
+        "match_fun": null
+    }
+]
