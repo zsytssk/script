@@ -1,0 +1,189 @@
+[
+    {
+        "type": "function",
+        "level": 1,
+        "item": {
+            "name": "onShow",
+            "type": "function",
+            "comment": "监听小游戏回到前台的事件",
+            "params": [
+                {
+                    "name": "callback",
+                    "type": "function",
+                    "comment": "小游戏回到前台的事件的回调函数",
+                    "params": [
+                        {
+                            "name": "res",
+                            "type": "object",
+                            "props": {
+                                "scene": {
+                                    "name": "scene",
+                                    "comment": "场景值",
+                                    "type": "string"
+                                },
+                                "query": {
+                                    "name": "query",
+                                    "comment": "查询参数",
+                                    "type": "Object"
+                                },
+                                "shareTicket": {
+                                    "name": "shareTicket",
+                                    "comment": "shareTicket",
+                                    "type": "string"
+                                },
+                                "referrerInfo": {
+                                    "name": "referrerInfo",
+                                    "comment": "referrerInfo 的结构",
+                                    "type": "object",
+                                    "props": {
+                                        "appId": {
+                                            "name": "appId",
+                                            "comment": "来源小程序或公众号或App的 appId",
+                                            "type": "string"
+                                        },
+                                        "extraData": {
+                                            "name": "extraData",
+                                            "comment": "来源小程序传过来的数据，scene=1037或1038时支持",
+                                            "type": "object"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "match_sub_arr": [null, null],
+        "match_fun": null
+    },
+    {
+        "type": "function",
+        "level": 3,
+        "item": {
+            "name": "callback",
+            "type": "function",
+            "comment": "小游戏回到前台的事件的回调函数",
+            "params": [
+                {
+                    "name": "res",
+                    "type": "object",
+                    "props": {
+                        "scene": {
+                            "name": "scene",
+                            "comment": "场景值",
+                            "type": "string"
+                        },
+                        "query": {
+                            "name": "query",
+                            "comment": "查询参数",
+                            "type": "Object"
+                        },
+                        "shareTicket": {
+                            "name": "shareTicket",
+                            "comment": "shareTicket",
+                            "type": "string"
+                        },
+                        "referrerInfo": {
+                            "name": "referrerInfo",
+                            "comment": "referrerInfo 的结构",
+                            "type": "object",
+                            "props": {
+                                "appId": {
+                                    "name": "appId",
+                                    "comment": "来源小程序或公众号或App的 appId",
+                                    "type": "string"
+                                },
+                                "extraData": {
+                                    "name": "extraData",
+                                    "comment": "来源小程序传过来的数据，scene=1037或1038时支持",
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "match_sub_arr": [null, null],
+        "match_fun": null
+    },
+    {
+        "type": "object",
+        "level": 5,
+        "item": {
+            "name": "res",
+            "type": "object",
+            "props": {
+                "scene": {
+                    "name": "scene",
+                    "comment": "场景值",
+                    "type": "string"
+                },
+                "query": {
+                    "name": "query",
+                    "comment": "查询参数",
+                    "type": "Object"
+                },
+                "shareTicket": {
+                    "name": "shareTicket",
+                    "comment": "shareTicket",
+                    "type": "string"
+                },
+                "referrerInfo": {
+                    "name": "referrerInfo",
+                    "comment": "referrerInfo 的结构",
+                    "type": "object",
+                    "props": {
+                        "appId": {
+                            "name": "appId",
+                            "comment": "来源小程序或公众号或App的 appId",
+                            "type": "string"
+                        },
+                        "extraData": {
+                            "name": "extraData",
+                            "comment": "来源小程序传过来的数据，scene=1037或1038时支持",
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "match_sub_arr": [null],
+        "match_fun": null
+    },
+    {
+        "type": "object",
+        "level": 6,
+        "item": {
+            "name": "referrerInfo",
+            "comment": "referrerInfo 的结构",
+            "type": "object",
+            "props": {
+                "appId": {
+                    "name": "appId",
+                    "comment": "来源小程序或公众号或App的 appId",
+                    "type": "string"
+                },
+                "extraData": {
+                    "name": "extraData",
+                    "comment": "来源小程序传过来的数据，scene=1037或1038时支持",
+                    "type": "object"
+                }
+            }
+        },
+        "match_sub_arr": [],
+        "match_fun": null
+    },
+    {
+        "type": "object",
+        "level": 7,
+        "item": {
+            "name": "extraData",
+            "comment": "来源小程序传过来的数据，scene=1037或1038时支持",
+            "type": "object"
+        },
+        "match_sub_arr": [null],
+        "match_fun": null
+    }
+]
