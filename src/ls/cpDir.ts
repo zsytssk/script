@@ -32,7 +32,7 @@ export async function cpDir(
             add_num = 1;
             await cpFile(abs_src_path, abs_dist_path);
             if (progress_fun) {
-                await progress_fun(abs_src_path, abs_dist_path);
+                await progress_fun(add_num);
             }
         }
         num += add_num;
