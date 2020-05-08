@@ -4,7 +4,7 @@ export function sleep(time: number) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve();
-        }, time);
+        }, time * 1000);
     });
 }
 
@@ -39,4 +39,14 @@ export async function listenLocal(list: string[]) {
             resolve(answer);
         });
     }) as Promise<string>;
+}
+
+export function waitProcessExit() {
+    return new Promise((resolve, reject) => {
+        process.on('exit', () => {
+            setTimeout(() => {
+                resolve();
+            }, 100);
+        });
+    });
 }
