@@ -3,7 +3,7 @@ const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 
 let common_config = {
-    entry: './src/ls/main.ts',
+    entry: './src/main.ts',
     output: {
         filename: 'zutil.js',
         path: path.resolve('bin'),

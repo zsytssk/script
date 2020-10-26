@@ -1,7 +1,6 @@
 import * as path from 'path';
 import { exists, lstatFile, readdir } from './asyncUtil';
 import { cpFile } from './cpFile';
-import { isIgnore } from './ignore';
 
 export async function cpDir(
     src_folder: string,
@@ -9,11 +8,6 @@ export async function cpDir(
     progress_fun?: FuncVoid,
 ) {
     let num = 0;
-
-    if (isIgnore(src_folder)) {
-        console.error(`${src_folder} is ignore!`);
-        return num;
-    }
 
     if (!(await exists(src_folder))) {
         console.error(`${src_folder} doesn't exist!`);

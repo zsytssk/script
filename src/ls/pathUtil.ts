@@ -1,27 +1,19 @@
 import * as path from 'path';
 import { lstatFile } from './asyncUtil';
 
-const split_sign = '\\';
 export function normalize(file_path: string) {
     file_path = path.normalize(file_path);
     return file_path.replace(/\\$/, '');
 }
 
-export function calcClosestDepth(
-    path_str: string,
-    parent_path: string,
-): number {
-    path_str = normalize(path_str);
-    const parent = normalize(parent_path);
-
-    if (parent === path_str) {
-        return 0;
+export function isSubPath(path_str: string, parent_path: string): boolean {
+    const relative = path.relative(parent_path, path_str);
+    if (relative === '') {
+        return true;
     }
-    if (path_str.indexOf(parent + split_sign) === -1) {
-        return -1;
-    }
-
-    return 1 + calcClosestDepth(path.resolve(path_str, '..'), parent_path);
+    return Boolean(
+        relative && !relative.startsWith('..') && !path.isAbsolute(relative),
+    );
 }
 
 type FileInfo = {
