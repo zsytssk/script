@@ -28,3 +28,9 @@ type Ctor<T> = new (...args) => T;
 declare module 'imagemin';
 declare module 'imagemin-mozjpeg';
 declare module 'imagemin-pngquant';
+
+var a = [1, 2, 'stt', 4] as const;
+
+type IndexOf<T extends any[]> = T[number];
+
+type b = IndexOf<typeof a>;
