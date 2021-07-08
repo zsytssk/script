@@ -28,7 +28,7 @@ export async function cpFile(src_path: string, dist_path: string) {
             if (done) {
                 done();
             }
-            resolve();
+            resolve(undefined);
         });
     });
 }
