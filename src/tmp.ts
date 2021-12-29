@@ -1,23 +1,20 @@
-import * as path from 'path';
-import { cp } from './ls/main';
-import { walk } from './ls/walk';
+import * as archiver from 'archiver';
+import * as fs from 'fs';
 
-const src = '/Users/zsy/Documents/zsytssk/job/website/src/containers/Match';
-const dist =
-    '/Users/zsy/Documents/zsytssk/job/dapp-website/src/containers/Match';
+//被打包文件
+const files = ['bin/0.png', 'bin/1.png'];
 
-async function main() {
-    const files = await walk(src, { ignore: ['Contract', 'Layout.tsx'] });
-    for (const file of files) {
-        if (file.indexOf('.less') !== -1) {
-            continue;
-        }
-
-        const relPath = path.relative(src, file);
-        const distFile = path.resolve(dist, relPath);
-        await cp(file, distFile);
-        console.log(`test:>`, distFile);
-    }
+const zipPath = 'test.zip';
+//创建一最终打包文件的输出流
+const output = fs.createWriteStream(zipPath);
+//生成archiver对象，打包类型为zip
+const zipArchiver = archiver('zip');
+//将打包对象与输出流关联
+zipArchiver.pipe(output);
+for (let i = 0; i < files.length; i++) {
+    console.log(files[i]);
+    //将被打包文件的流添加进archiver对象中
+    zipArchiver.append(fs.createReadStream(files[i]), { name: files[i] });
 }
-
-main();
+//打包
+zipArchiver.finalize();
