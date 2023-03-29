@@ -1,67 +1,70 @@
-import nodeFetch from 'node-fetch';
-
-const query = `query searchFormValue(
-    $form_slug: String
-    $filters: JSON
-    $order_by: [OrderByEntity]
-    $limit: Int
-    $offset: Int
-    $filter_entities: JSON
-    $relation: Int
-    $full_text_search_keyword: String
-  ) {
-    searchFormValue(
-      form_slug: $form_slug
-      filters: $filters
-      order_by: $order_by
-      offset: $offset
-      limit: $limit
-      filter_entities: $filter_entities
-      relation: $relation
-      full_text_search_keyword: $full_text_search_keyword
-    ) {
-      items
-    }
-  }`;
-
-const variables = {
-    form_slug: 'cd_image_list',
-    limit: 3,
-    offset: 0,
-    order_by: [],
-    filter_entities: [],
-    filters: {
-        workload_id: '47',
-        tier_id: 1878,
-        tier_name: 'zsy1-alivia2-server',
-    },
+type Item = {
+    id: number;
+    parent_id: number | null;
 };
+type Tree = {
+    id: number;
+    parent_id: number | null;
+    children: Tree[];
+};
+function nest(list: Item[]) {
+    const treeList = [] as Tree[];
+    for (const item of list) {
+        const treeItem = {
+            id: item.id,
+            parent_id: item.parent_id,
+            children: [],
+        } as Tree;
+        treeList.push(treeItem);
+    }
 
-async function main() {
-    nodeFetch('https://venus.meetwhale.com/graphql', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json; charset=utf-8',
-            Accept: 'application/json',
-            authorization: 'ww9H2pFPSyi0OW-d3kZHCA',
-        },
-        body: JSON.stringify({
-            query,
-            variables,
-        }),
-    })
-        .then((res) => {
-            return res.json();
-        })
-        .then((data: any) => {
-            for (const item of data.data.searchFormValue.items) {
-                const { branch, creator, version_desc, image_address } = item;
-                console.log({ branch, creator, version_desc });
+    for (const item of treeList) {
+        for (const otherItem of treeList) {
+            if (item === otherItem) {
+                continue;
             }
-        })
-        .catch(() => {
-            console.log(`脚本运行错误， 也许你的authorization需要更新`);
-        });
+            if (item.id === otherItem.parent_id) {
+                item.children.push(otherItem);
+            }
+        }
+    }
+    return treeList[0];
 }
 
-main();
+const arr = [
+    {
+        id: 1,
+        parent_id: null,
+    },
+    {
+        id: 2,
+        parent_id: 1,
+    },
+    {
+        id: 3,
+        parent_id: 1,
+    },
+    {
+        id: 4,
+        parent_id: 2,
+    },
+    {
+        id: 5,
+        parent_id: 4,
+    },
+    {
+        id: 6,
+        parent_id: 5,
+    },
+    {
+        id: 7,
+        parent_id: 3,
+    },
+    {
+        id: 8,
+        parent_id: 7,
+    },
+];
+
+const result = nest(arr);
+console.log(result);
