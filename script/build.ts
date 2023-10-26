@@ -9,7 +9,7 @@ import { write } from '../src/ls/write';
 
 async function main() {
     // await rm('./dist');
-    // await cp('./src', './dist');
+    // await cp('./src', './dist');`
     // await cp('./package.json', './dist/package.json');
     await excuse('npm pack', { path: path.resolve('./dist'), output: true });
     const paths = await readdir('./dist');
